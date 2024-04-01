@@ -35,7 +35,6 @@ html {
 
 /* svg */
 svg {
-  fill: currentColor;
   vertical-align: middle;
   pointer-events: none; }
 

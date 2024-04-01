@@ -61,8 +61,10 @@ nav {
       cursor: pointer; }
       nav ul li:hover button a {
         color: white; }
-        nav ul li:hover button a svg g path:first-of-type {
-          stroke: white; }
+        nav ul li:hover button a svg {
+          fill: transparent; }
+          nav ul li:hover button a svg g path:first-of-type {
+            stroke: white; }
         nav ul li:hover button a span svg g path {
           fill: white; }
         nav ul li:hover button a span svg path {
