@@ -1,0 +1,349 @@
+@import url('https://fonts.cdnfonts.com/css/mona-sans')
+
+// COLORS
+
+$side_bar_bc: #080f25
+$link_hover: #101935
+$body_bc: #212c4d
+$purple: #6c72ff
+$light-purple: #9a91fb
+$dark: #1f2023
+$dark-blue: #212c4d
+$blue: #37446b
+$almost-black: #343b4f
+$almost-white: #aeb9e1
+
+
+body
+  font-family: "Mona-sans", sans-serif
+  background-color: $body_bc
+  height: 100vh
+
+// SCROLLBAR
+
+::-webkit-scrollbar
+  background-color: white
+  width: 16px
+
+
+::-webkit-scrollbar-track
+  background-color: white
+
+
+::-webkit-scrollbar-thumb
+  background-color: #aeb9e1
+  border-radius: 16px
+  border: 4px solid #fff
+
+
+::-webkit-scrollbar-button
+  display: none
+
+// CONTAINER
+.container
+  display: flex
+  height: 100vh
+
+// SIDEBAR
+
+.side_bar
+  background-color: $side_bar_bc
+  width: 300px
+  display: flex
+  flex-direction: column
+  align-items: start
+  overflow-y: auto
+  height: 100%
+  scrollbar-color: $purple
+  padding: 20px 25px
+
+.logo
+  display: flex
+  align-items: center
+  justify-content: center
+  color: white
+  font-size: 20px
+  line-height: 20px
+  font-weight: 300
+  cursor: pointer
+  transition: all .4s ease-in-out
+  &:hover
+    transform: scale(1.1)
+  span
+    padding-left: 10px
+  img
+    width: 30px
+
+nav
+  width: 100%
+  ul li
+    margin-top: 10px
+    &:first-child
+      margin-top: 50px
+    &:hover
+      cursor: pointer
+      button a
+        color: white
+        svg g path:first-of-type
+          stroke: white
+        span
+          svg g path
+            fill: white
+          svg path
+            fill: white
+    a
+      font-weight: 500
+      color: $almost-white
+      font-size: 14px
+      line-height: 14px
+      display: flex
+      align-items: center
+      justify-content: space-between
+      span
+        display: flex
+        align-items: center
+        gap: 5px
+        svg
+          path
+            fill: $almost-white
+.btn
+  color: $almost-white
+  background-color: transparent
+  align-items: center
+  cursor: pointer
+  border: none
+  position: relative
+  justify-content: space-between
+  width: 100%
+
+
+ul li .btn_active
+    a
+      color: $purple !important
+      svg g path:first-of-type
+        stroke: $purple !important
+      span
+        svg g path
+          fill: $purple !important
+        svg path
+          fill: $purple !important
+
+
+// DROPDOWN MENU
+
+.dropdown
+  width: 100%
+  transform: scaleY(0)
+  max-height: 0
+  position: relative
+  margin-top: 15px
+  ul li
+    margin: 0 !important
+
+
+.dropdown a 
+  display: flex
+  align-items: center
+  padding: 14px 18px
+  text-decoration: none
+  border-radius: 5px
+  color: $almost-white
+  transition: all .2s ease-in-out
+  &:hover
+    background-color: $link_hover
+
+.dropdown a:hover
+  color: white
+
+.show
+  transform: scaleY(1)
+  max-height: 100%
+
+.arrow 
+  transform: rotate(90deg)
+  transition: 0.2s ease
+
+.user_btn .current_user
+  display: flex
+  align-items: center
+  justify-content: start
+  p span
+    color: white
+    font-size: 16px
+    padding-bottom: 5px
+
+.user_profile
+  margin-right: 10px
+  border-radius: 50%
+  width: 25px
+  height: 25px
+  background-color: $purple
+
+// MAIN SECTION
+
+.main
+  height: 100%
+  width: calc(100% - 300px)
+  display: flex
+  padding: 25px 30px
+  align-items: center
+  flex-direction: column
+
+::selection
+  color: #fff
+  background: #6990F2
+
+.file-upload-wrapper
+  width: 800px
+  height: calc(100% - 50px)
+  border-radius: 5px
+  position: relative
+  height: 100%
+
+form:first-of-type
+  height: 167px
+  display: flex
+  cursor: pointer
+  margin-bottom: 30px
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  border-radius: 5px
+  border: 2px dashed white
+
+form :where(i, p)
+  color: #ffffff
+
+form i
+  font-size: 50px
+
+form p
+  margin-top: 15px
+  font-size: 16px
+
+section .row
+  margin-bottom: 10px
+  background: #E9F0FF
+  list-style: none
+  padding: 15px 20px
+  border-radius: 5px
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+section .row i
+  color: #6990F2
+  font-size: 30px
+
+section .details span
+  font-size: 14px
+
+.progress-area .row .content
+  width: 100%
+  margin-left: 15px
+
+.progress-area .details
+  display: flex
+  align-items: center
+  margin-bottom: 7px
+  justify-content: space-between
+
+.progress-area .content .progress-bar
+  height: 6px
+  width: 100%
+  margin-bottom: 4px
+  background: #fff
+  border-radius: 30px
+
+.content .progress-bar .progress
+  height: 100%
+  width: 0%
+  background: #6990F2
+  border-radius: inherit
+
+.uploaded-area
+  max-height: 232px
+  overflow-y: scroll
+
+.uploaded-area.onprogress
+  max-height: 150px
+
+.uploaded-area::-webkit-scrollbar
+  width: 0px
+
+.uploaded-area .row .content
+  display: flex
+  align-items: center
+
+.uploaded-area .row .details
+  display: flex
+  margin-left: 15px
+  flex-direction: column
+
+.uploaded-area .row .details .size
+  color: #404040
+  font-size: 11px
+
+.uploaded-area i.fa-check
+  font-size: 16px
+
+// INPUT 
+
+.file-upload-wrapper form:last-of-type
+  position: absolute
+  width: 100%
+  bottom: 25px
+  margin: 0 auto
+  input[type="text"]
+    box-sizing: border-box
+    width: 100%
+    height: calc(3em + 2px)
+    margin: 0 0 1em
+    padding: 1em
+    border: 1px solid $almost-white
+    color: $almost-white
+    border-radius: 1.5em
+    background: $link_hover
+    resize: none
+    outline: none
+
+  input[type="text"][required]:focus
+    border-color: white
+
+  input[type="text"][required]:focus + label[placeholder]:before
+    color: white
+
+  input[type="text"][required]:focus + label[placeholder]:before,
+  input[type="text"][required]:valid + label[placeholder]:before
+    transition-duration: 0.2s
+    transform: translate(0, -1.5em) scale(0.9, 0.9)
+
+  input[type="text"][required]:invalid + label[placeholder][alt]:before
+    content: attr(alt)
+
+  input[type="text"][required] + label[placeholder]
+    display: block
+    pointer-events: none
+    line-height: 1.25em
+    margin-top: calc(-3em - 2px)
+    margin-bottom: calc((3em - 1em) + 2px)
+
+  input[type="text"][required] + label[placeholder]:before
+    content: attr(placeholder)
+    display: inline-block
+    margin: 0 calc(1em + 2px)
+    padding: 0 2px
+    color: $almost-white
+    white-space: nowrap
+    transition: 0.3s ease-in-out
+    background-image: linear-gradient(to bottom, $side_bar_bc, $side_bar_bc)
+    background-size: 100% 5px
+    background-repeat: no-repeat
+    background-position: center
+
+
+
+
+
+
+
