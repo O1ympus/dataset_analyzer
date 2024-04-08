@@ -50,25 +50,31 @@ body {
     padding-left: 10px; }
   .logo img {
     width: 30px; }
+  .logo a {
+    text-decoration: none;
+    color: white; }
 
 nav {
   width: 100%; }
   nav ul li {
-    margin-top: 10px; }
+    margin-top: 10px;
+    line-height: 10px; }
     nav ul li:first-child {
       margin-top: 50px; }
-    nav ul li:hover {
-      cursor: pointer; }
-      nav ul li:hover button a {
-        color: white; }
-        nav ul li:hover button a svg {
-          fill: transparent; }
-          nav ul li:hover button a svg g path:first-of-type {
-            stroke: white; }
-        nav ul li:hover button a span svg g path {
-          fill: white; }
-        nav ul li:hover button a span svg path {
-          fill: white; }
+    nav ul li:hover button a {
+      color: white;
+      transition: color .3s; }
+      nav ul li:hover button a svg:first-child g path {
+        stroke: white;
+        transition: fill .3s; }
+      nav ul li:hover button a svg:last-of-type {
+        fill: transparent; }
+      nav ul li:hover button a span svg g path {
+        fill: white;
+        transition: fill .3s; }
+      nav ul li:hover button a span svg path {
+        fill: white;
+        transition: fill .3s; }
     nav ul li a {
       font-weight: 500;
       color: #aeb9e1;
@@ -83,6 +89,8 @@ nav {
         gap: 5px; }
         nav ul li a span svg path {
           fill: #aeb9e1; }
+      nav ul li a:hover {
+        cursor: pointer; }
 
 .btn {
   color: #aeb9e1;
@@ -92,12 +100,15 @@ nav {
   border: none;
   position: relative;
   justify-content: space-between;
-  width: 100%; }
+  width: 100%;
+  display: block; }
 
 ul li .btn_active a {
   color: #6c72ff !important; }
-  ul li .btn_active a svg g path:first-of-type {
+  ul li .btn_active a svg g path {
     stroke: #6c72ff !important; }
+  ul li .btn_active a svg:last-of-type g path:last-of-type {
+    stroke: transparent !important; }
   ul li .btn_active a span svg g path {
     fill: #6c72ff !important; }
   ul li .btn_active a span svg path {
@@ -167,7 +178,9 @@ ul li .btn_active a {
   height: calc(100% - 50px);
   border-radius: 5px;
   position: relative;
-  height: 100%; }
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
 
 form:first-of-type {
   height: 167px;
@@ -301,3 +314,61 @@ section .details span {
     background-size: 100% 5px;
     background-repeat: no-repeat;
     background-position: center; }
+
+.start_analyzing {
+  background-color: #6c72ff;
+  border-radius: 5px;
+  margin: 0 0 0 auto;
+  cursor: pointer;
+  transition: .3s background-color ease-in; }
+  .start_analyzing:hover {
+    background-color: #101935; }
+  .start_analyzing a {
+    text-decoration: none;
+    padding: 15px 30px;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px; }
+
+.back_to_chat {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #aeb9e1;
+  gap: 8px; }
+  .back_to_chat svg g path {
+    stroke: #aeb9e1; }
+  .back_to_chat:hover {
+    color: white;
+    transition: color .3s; }
+    .back_to_chat:hover svg g path {
+      stroke: white;
+      transition: stroke .3s; }
+
+.result_wrapper {
+  display: flex;
+  align-items: center;
+  max-width: 90%; }
+
+.result_info {
+  margin-left: 30px; }
+  .result_info h3 {
+    color: white;
+    font-size: 32px; }
+  .result_info p {
+    padding-top: 15px;
+    color: white;
+    font-size: 20px;
+    line-height: 26px; }
+
+.result_image {
+  margin-bottom: 20px;
+  border-radius: 10px; }
+  .result_image img {
+    border-radius: 10px; }
+
+.download_button {
+  margin-top: 20px; }

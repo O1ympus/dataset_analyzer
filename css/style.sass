@@ -73,26 +73,34 @@ body
     padding-left: 10px
   img
     width: 30px
+  a
+    text-decoration: none
+    color: white
 
 nav
   width: 100%
   ul li
     margin-top: 10px
+    line-height: 10px
     &:first-child
       margin-top: 50px
     &:hover
-      cursor: pointer
       button a
         color: white
-        svg
-          fill: transparent
-          g path:first-of-type
+        transition: color .3s
+        svg:first-child
+          g path
             stroke: white
+            transition: fill .3s
+        svg:last-of-type
+          fill: transparent
         span
           svg g path
             fill: white
+            transition: fill .3s
           svg path
             fill: white
+            transition: fill .3s
     a
       font-weight: 500
       color: $almost-white
@@ -108,6 +116,8 @@ nav
         svg
           path
             fill: $almost-white
+      &:hover
+        cursor: pointer
 .btn
   color: $almost-white
   background-color: transparent
@@ -117,18 +127,26 @@ nav
   position: relative
   justify-content: space-between
   width: 100%
+  display: block
 
 
-ul li .btn_active
+ul li
+  .btn_active
     a
       color: $purple !important
-      svg g path:first-of-type
-        stroke: $purple !important
+      svg
+        g path
+          stroke: $purple !important
+        &:last-of-type
+          g path:last-of-type
+            stroke: transparent !important
       span
         svg g path
           fill: $purple !important
         svg path
           fill: $purple !important
+
+
 
 
 // DROPDOWN MENU
@@ -201,6 +219,8 @@ ul li .btn_active
   border-radius: 5px
   position: relative
   height: 100%
+  display: flex
+  flex-direction: column
 
 form:first-of-type
   height: 167px
@@ -342,6 +362,68 @@ section .details span
     background-size: 100% 5px
     background-repeat: no-repeat
     background-position: center
+
+.start_analyzing
+  background-color: $purple
+  border-radius: 5px
+  margin: 0 0 0 auto
+  cursor: pointer
+  transition: .3s background-color ease-in
+  &:hover
+    background-color: $link_hover
+  a
+    text-decoration: none
+    padding: 15px 30px
+    color: white
+    font-size: 18px
+    display: flex
+    align-items: center
+    gap: 8px
+
+.back_to_chat
+  margin-top: 50px
+  display: flex
+  align-items: center
+  text-decoration: none
+  color: $almost-white
+  gap: 8px
+  svg g path
+    stroke: $almost-white
+  &:hover
+    color: white
+    transition: color .3s
+    svg
+      g path
+        stroke: white
+        transition: stroke .3s
+
+.result_wrapper
+  display: flex
+  align-items: center
+  max-width: 90%
+
+.result_info
+  margin-left: 30px
+  h3
+    color: white
+    font-size: 32px
+  p
+    padding-top: 15px
+    color: white
+    font-size: 20px
+    line-height: 26px
+
+.result_image
+  margin-bottom: 20px
+  border-radius: 10px
+  img
+    border-radius: 10px
+
+.download_button
+  margin-top: 20px
+
+
+
 
 
 
