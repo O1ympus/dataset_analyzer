@@ -357,12 +357,12 @@ section .details span {
   margin-left: 30px; }
   .result_info h3 {
     color: white;
-    font-size: 32px; }
+    font-size: 28px; }
   .result_info p {
     padding-top: 15px;
     color: white;
-    font-size: 20px;
-    line-height: 26px; }
+    font-size: 16px;
+    line-height: 22px; }
 
 .result_image {
   margin-bottom: 20px;
